@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tangoline</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c79ea0e784.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lobster&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;900&family=Staatliches&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans&family=Lobster&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;900&family=Staatliches&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .brands-grid {
+      width: 100%;
+      padding: 100px 0;
+    }
+
+    .brand-showcase h2 {
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    :focus-visible {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+
+    span {
+      color: #ff9933;
+    }
+
+    .brands-container {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: auto;
+    }
+
+    .brand-showcase-line {
+      position: relative;
+      padding: 30px 0;
+    }
+
+    .brand-showcase-line:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #ccc;
+    }
+
+    .brands-grid .brand-items {
+      flex: 1;
+      opacity: 1;
+      transition: 0.5s ease;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .brands-grid .brand-items:hover img {
+      transform: scale(1.04);
+      opacity: 0.6;
+      transition: 0.5s ease;
+    }
+
+    .brand-showcase img {
+      width: 90%;
+    }
+
+    #about-us {
+      margin-top: 100px;
+    }
+
+    .about-section h2 {
+      font-size: 30px;
+      line-height: 40px;
+      font-family: 'Work Sans', sans-serif;
+      color: #222222;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 30px;
+    }
+
+    .button-btn {
+      text-decoration: none;
+      font-size: 15px;
+      font-family: 'Work Sans', sans-serif;
+      padding: 13px 55px 13px 55px;
+      background: #ff9933;
+      color: #fff;
+      border-radius: 30px;
+      text-transform: capitalize;
+      transition: all 300ms ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .button-btn:hover {
+      text-decoration: none;
+      background: #212121;
+      color: #ff9933;
+    }
+
+    .about-text-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: auto;
+      width: 100%;
+    }
+
+    .about-text {
+      width: 90%;
+    }
+
+    .about-container {
+      margin-top: 128px;
+    }
+
+    .home-brand-container {
+      margin-top: 50px;
+    }
+
+    .home-players-cont {
+      align-items: center;
+      display: flex;
+      font-family: "Merriweather", serif;
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!--Nav Header -->
+
+
+  <div class="fixed">
+    <header class="maincontainer">
+      <div class="logo"><img src="./images/tangoline logo.png" alt="logo png" height="270px" width="270px"
+          style="margin-top: 39px;"></div>
+    </header>
+    <header class="container1">
+      <nav class="navbar navbar-expand-lg ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <div class=""> <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+              class="bi bi-list" style="color: whitesmoke;" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg></div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./brand.html">Brand</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="console.html">Console</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="players.html">Players</a>
+                <a class="dropdown-item" href="about.html">About</a>
+                <a class="dropdown-item" href="brand.html">Brand</a>
+                <a class="dropdown-item" href="console.html">Console</a>
+                <a class="dropdown-item" href="contactus.html">Contact Us</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+  </div>
+
+  <!-- Header slider -->
+
+  <div class="banner">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./images/4 (1).jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/1 (1).jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="home-banner">
+
+    <div class="fig-container">
+      <figure class="snip1256" style="height: 224px;">
+
+        <img src="images/4 (1).jpg" alt="sample42" />
+        <figcaption>
+          <h3>Call Of Duty</h3>
+          <h4>WAR ZONE</h4>
+          <p>The strength to change what I can, the inability to accept what I can't and the incapacity to tell the
+            difference.</p><a href="#" class="read-more">Download Now</a>
+        </figcaption>
+      </figure>
+      <figure class="snip1256 hover" style="height: 224px;">
+        <img src="images/home-img1.jpg" alt="sample22" />
+        <figcaption>
+          <h3>Need for Speed</h3>
+          <p>Need for Speed is a racing video game franchise published by Electronic Arts and currently developed by
+            Criterion Games .</p><a href="#" class="read-more">Download Now</a>
+        </figcaption>
+      </figure>
+      <figure class="snip1256" style="height: 224px;">
+        <img src="images/Farm-Frenzy.jpg" alt="sample20" />
+        <figcaption>
+          <h3>Farm Frenzy</h3>
+          <p>Farm Frenzy is a series of downloadable casual games developed by Melesta Games and published by Alawar
+            Entertainment. </p><a href="#" class="read-more">Download Now</a>
+        </figcaption>
+      </figure>
+      <figure class="snip1256" style="height: 224px;">
+        <img src="images/2.jpg" alt="sample20" />
+        <figcaption>
+          <h3>Free Fire</h3>
+          <p>Garena Free Fire, also known as Free Fire, is a battle royale game, developed by 111dots Studio and
+            published by Garena for Android and iOS. </p><a href="#" class="read-more">Download Now</a>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- our games -->
+
+  <div class="our-games">OUR GAMES </div>
+
+
+
+  <!-- fig 1-->
+
+
+  <div class="fig-conatiner2" style="height: 300px; width: auto; margin-top: 32px; background-color: white;">
+    <figure class="snip1273" style="height: 310px;">
+      <img src="images/toy-story.png" alt="sample72" />
+
+      <figcaption>
+        <h3>Toy Story 3</h3>
+        <p>Toy Story 3 is a 2010 platform game developed by Avalanche Software and published by Disney Interactive
+          Studios. It is loosely based on the film of the same name. It was released for PlayStation 3, Xbox 360, Wii,
+          Windows, and Mac OS X. </p>
+        <p><b>Initial release date:</b> June 2010</p><a href="#" class="read-more">
+          <p style="
+text-align: center;
+  font-size: 17px;
+  margin-top: -7px;"> Buy Now</p>
+        </a>
+      </figcaption>
+    </figure>
+    <figure class="snip1273 hover" style="height: 310px;">
+      <img src="images/need for speed.png" alt="sample21" />
+      <figcaption>
+        <h3>Need for Speed™ Hot Pursuit Remastered </h3>
+        <p>Need for Speed is a racing video game franchise published by Electronic Arts and currently developed by
+          Criterion Games, the developers of Burnout. The series generally racing and tasks.</p>
+        <p><b>Initial release date:</b> November 6, 2020</p> <a href="#" class="read-more">
+          <p style="
+        text-align: center;
+          font-size: 17px;
+          margin-top: -7px;"> Buy Now</p>
+        </a>
+      </figcaption>
+    </figure>
+    <figure class="snip1273" style="height: 310px;">
+      <img src="images/Allan wake.jpg" alt="sample86" />
+      <figcaption>
+        <h3>Alan Wake</h3>
+        <p>Alan Wake is an action-adventure game developed by Remedy Entertainment and published by Microsoft Studios,
+          released for the Xbox 360 in May 2010, and Microsoft Windows in February 2012.</p>
+        <p><b>Initial release date:</b> May 14, 2010</p><a href="#" class="read-more">
+          <p style="
+        text-align: center;
+          font-size: 17px;
+          margin-top: -7px;"> Buy Now</p>
+        </a>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- fig 2-->
+
+
+  <div class="fig-conatiner2" style="height: 300px; width: auto; background-color: white">
+    <figure class="snip1273" style="height: 310px;">
+      <img src="images/Battlefield-Bad-Company-2-647x441.jpg" alt="sample72" />
+
+      <figcaption>
+        <h3>Battlefield: Bad Company 2</h3>
+        <p>Battlefield: Bad Company 2 is a first-person shooter video game developed by the Swedish firm DICE and
+          published by Electronic Arts for Microsoft Windows, PlayStation 3, Xbox 360, iOS and Kindle Fire systems. </p>
+        <p><b>Initial release date:</b> March 2, 2010</p><a href="#" class="read-more">
+          <p style="
+text-align: center;
+font-size: 17px;
+margin-top: -7px;"> Buy Now</p>
+        </a>
+      </figcaption>
+    </figure>
+    <figure class="snip1273 hover" style="height: 310px;">
+      <img src="images/Bioshock.jpg" alt="sample21" />
+      <figcaption>
+        <h3>BioShock Infinite</h3>
+        <p>BioShock Infinite is a first-person shooter video game developed by Irrational Games and published by 2K
+          Games. It was released worldwide for the Microsoft Windows, PlayStation 3, Xbox 360, and OS X platforms in
+          2013, and a Linux port was released in 2015.</p>
+        <p><b>Initial release date: </b> March 26, 2013</p><a href="#" class="read-more">
+          <p style="
+    text-align: center;
+      font-size: 17px;
+      margin-top: -7px;"> Buy Now</p>
+        </a>
+      </figcaption>
+    </figure>
+    <figure class="snip1273" style="height: 310px;">
+      <img src="images/star wars.jpg" alt="sample86" />
+      <figcaption>
+        <h3>Star Wars Squadrons</h3>
+        <p>Star Wars: Squadrons is a space combat game set in the Star Wars universe developed by Motive Studios and
+          published by Electronic Arts. It was released for Microsoft Windows, Xbox One, and PlayStation 4 on October 2,
+          2020 and for Xbox Series X/S on December 3, 2020. </p>
+        <p><b>Initial release date:</b> October 1, 2020</p><a href="#" class="read-more">
+          <p style="
+    text-align: center;
+      font-size: 17px;
+      margin-top: -7px;"> Buy Now</p>
+        </a>
+      </figcaption>
+    </figure>
+  </div>
+
+
+
+
+
+
+
+
+  <!-- About Container -->
+
+
+  <div class="about-container">
+
+    <div class="about-section">
+      <div class="about-container">
+        <div class="about-text-container">
+          <div class="about-text">
+            <h5>About us</h5>
+            <h2>Welcome to <span>Tangoline</span></h2>
+            <p>Tangoline Inc. is selling Video Games, Game Consoles etc. Company is into selling these products for last
+              10 years. They have a wide range of games. The company advertises by distributing the pamphlets,
+              advertising on television and so on. Due to rapid development in internet field, the company decides to
+              launch a website where people will get all the information about the various products available with them
+              easily.</p>
+            <a href="about.html" class="button-btn" style="display: inline-block;">- More -</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Famous Brand -->
+
+
+  <div class="home-brand-container">
+    <div class="brands-grid brand-showcase" style="padding: 50px 0;">
+      <h2>HERE'S FEW <span>FAMOUS BRANDS</span> WE'VE WORKED.</h2>
+      <div class="brands-container brand-showcase-line">
+        <div class="brand-items">
+          <a href="nexon.html" title="Activision">
+            <img src="images/Brand-logo (1).jpg" alt="Activision Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="epic.html" title="Disney">
+            <img src="images/Brand-logo (1).png" alt="Disney Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="BandaiNimco.html" title="EA Sport">
+            <img src="images/Brand-logo (10).png" alt="EA Sport Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="disnep.html" title="Epic">
+            <img src="images/Brand-logo (2).jpg" alt="Epic Logo ">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="NetMarble.html" title="Netmarble">
+            <img src="images/Brand-logo (2).png" alt="Netmarble Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="EA-Sports.html" title="Nexon">
+            <img src="images/Brand-logo (3).jpg" alt="Nexon Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="popCap.html" title="Popcap">
+            <img src="images/Brand-logo (3).png" alt="Popcap Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="Sega.html" title="Sega">
+            <img src="images/Brand-logo (4).png" alt="Sega Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="TheSims.html" title="Sims">
+            <img src="images/Brand-logo (5).png" alt="Sims Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="take-two-interactive.html" title="Take 2">
+            <img src="images/Brand-logo (6).png" alt="Take 2 Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="Tecent.html" title="Tencent">
+            <img src="images/Brand-logo (7).png" alt="Tencent Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="ubisoft.html" title="Ubisoft">
+            <img src="images/Brand-logo (8).png" alt="Ubisoft Logo">
+          </a>
+        </div>
+        <div class="brand-items">
+          <a href="ACTIVISION.HTML" title="Bandai">
+            <img src="images/Brand-logo (9).png" alt="Bandai Logo">
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- players container -->
+
+    <h5 style="margin-left: 80px; ">Player Reviews</h5>
+
+
+
+    <div class="home-players-cont">
+
+
+
+      <div class="person">
+        <div class="container">
+          <div class="container-inner">
+            <img class="circle" src="./images/playersbackground-img3.jpg" />
+            <img class="img img1" src="./images/players-img7-removebg-preview.png" />
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="name">Ramon</div>
+        <div class="title">My review about PUBG</div>
+        <div class="text">
+          <p>PUBG is a very outstanding Game! i am playing this game for a while like 1 year there are so many glatiches
+            ,lag and weaping. please solved problems Thankyou!</p>
+        </div>
+      </div>
+
+
+
+
+      <div class="person">
+        <div class="container">
+          <div class="container-inner">
+            <img class="circle" src="./images/playersbackground-img4.jpg" />
+            <img class="img img3 " id="img3" src="./images/mahira-khan-img3-removebg-preview.png" />
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="name">Mahira</div>
+        <div class="title">My review about PUBG</div>
+        <div class="text">
+          <p>PUBG is a very outstanding Game! i am playing this game for a while like 1 year there are so many glatiches
+            ,lag and weaping. please solved problems Thankyou!</p>
+        </div>
+      </div>
+
+
+
+      <div class="person">
+        <div class="container">
+          <div class="container-inner">
+            <img class="circle" src="./images/playersbackground-img2.jpg" />
+            <img class="img img2" src="./images/players-img2-removebg-preview.png" />
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="name">Sally</div>
+        <div class="title">My review about FREE FIRE</div>
+        <div class="text">
+          <p>FREE FIRE is a nice Game I like this game its realy good and compatitive but can you please fix some
+            glitches and graphic & Thank you!</p>
+        </div>
+      </div>
+
+
+      <a href="players.html" class="button-btn" style="display: inline-block;">- More -</a>
+    </div>
+
+
+
+
+
+
+    <div id="footer" style="margin-top: 140px;">
+
+      <div class="footer-logo"><img src="images/tangoline logo.png" alt="logo" height="400px" width="100%"></div>
+      <div class="F-connect links">
+        <h5 style="margin-top: auto;"> connect with us on :</h5>
+        <a href=""><i class="fab fa-facebook-f social-icon"></i></a>
+        <a href=""><i class="fab fa-youtube  social-icon"></i></a>
+        <a href=""><i class="fab fa-twitter  social-icon"></i></a>
+        <a href=""><i class="fab fa-google  social-icon"></i></a>
+        <a href=""><i class="fab fa-pinterest-p  social-icon"></i></a>
+      </div>
+      <div class="copy-right">
+        <p style="margin-top: 32px;"> Muhammad Rafay &copy;-2022 All Rights Reserved </p>
+      </div>
+    </div>
+
+
+
+  </div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+
+  </div>
+
+
+
+  <script>
+    $(".hover").mouseleave(
+      function () {
+        $(this).removeClass("hover");
+      }
+    );
+
+    $(".hover").mouseleave(
+      function () {
+        $(this).removeClass("hover");
+      }
+    );
+  </script>
+
+
+  <!-- 
+<section>
+
+<div class="center">
+
+
+
+
+</div>
+
+</section> -->
+
+
+
+
+</body>
+
+</html>
